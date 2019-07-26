@@ -1,0 +1,239 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: 700;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: 2 1C 2 1D 2 18 2 19;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body,
+figure {
+  margin: 0;
+}
+legend,
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url("../fonts/Butler_Webfont/Butler-UltraLight.woff2") format('woff2'), url("../fonts/Butler_Webfont/Butler-UltraLight.woff") format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url("../fonts/Butler_Webfont/Butler-Medium.woff2") format('woff2'), url("../fonts/Butler_Webfont/Butler-Medium.woff") format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url("../fonts/Butler_Webfont/Butler-Light.woff2") format('woff2'), url("../fonts/Butler_Webfont/Butler-Light.woff") format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url("../fonts/Butler_Webfont/Butler-Black.woff2") format('woff2'), url("../fonts/Butler_Webfont/Butler-Black.woff") format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url("../fonts/Butler_Webfont/Butler-Bold.woff2") format('woff2'), url("../fonts/Butler_Webfont/Butler-Bold.woff") format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url("../fonts/Butler_Webfont/Butler-ExtraBold.woff2") format('woff2'), url("../fonts/Butler_Webfont/Butler-ExtraBold.woff") format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url("../fonts/Butler_Webfont/Butler.woff2") format('woff2'), url("../fonts/Butler_Webfont/Butler.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+.home {
+  text-align: center;
+}
+.home__logo {
+  padding: 5vmin;
+  width: 40vmin;
+  pointer-events: none;
+  background-color: #ffefd5;
+  font-family: 'Butler';
+}
+.home__header {
+  background-color: #fefefe;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: #000;
+}
+.home__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+.home__image {
+  width: 100%;
+}
+.home__btn {
+  background-color: #ffefd5;
+  font-family: 'Butler';
+  border: 2px solid #ffefd5;
+  padding: 10px 30px;
+  line-height: 28px;
+  transition: all 0.3s ease;
+}
+.home__btn:hover {
+  cursor: pointer;
+  background-color: #fff;
+}

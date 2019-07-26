@@ -1,0 +1,27 @@
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.app {
+  text-align: center;
+}
+
+.app__logo {
+  height: 20vmin;
+  width: 40vmin;
+  pointer-events: none;
+  background-color: papayawhip;
+}
+
+.app__header {
+  background-color: #fefefe;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: #000;
+}
+
+.app__container {
+  display: grid;
+} */

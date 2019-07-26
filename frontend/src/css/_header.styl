@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.home {
+  text-align: center;
+  &__logo {
+    padding: 5vmin;
+    width: 40vmin;
+    pointer-events: none;
+    background-color: papayawhip;
+    font-family 'Butler'
+  }
+  &__header {
+    background-color: #fefefe;
+    min-height: 100vh;
+    font-size: calc(10px + 2vmin);
+    color: #000;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap  50px
+  }
+  &__item {
+    &--left {
+    }
+  }
+  &__image {
+    width 100%
+    // max-width 300px
+  }
+  &__btn {
+    background-color: papayawhip;
+    font-family 'Butler'
+    border 2px solid papayawhip; 
+    padding 10px 30px
+    line-height 28px
+    transition: all 0.3s ease;
+    &:hover {
+      cursor pointer
+      background-color #fff
+    }
+  }
+}
