@@ -155,6 +155,118 @@ input::-moz-focus-inner {
   clear: both;
   height: 0;
 }
+* {
+  box-sizing: border-box;
+}
+.addDay {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.days {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+@media (max-width: 500px) {
+  .days {
+    grid-template-columns: 80px 1fr;
+  }
+}
+.days__container {
+  border-right: 1px solid #000;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+@media (max-width: 500px) {
+  .days__container {
+    display: none;
+    border: 0px;
+  }
+}
+.days__list {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.days__add-btn {
+  padding: 20px;
+  font-size: 2rem;
+  background-color: #ffefd5;
+  font-family: 'Butler';
+  border: 2px solid #ffefd5;
+  line-height: 28px;
+  transition: all 0.3s ease;
+}
+.days__mobile {
+  display: none;
+  border-right: 1px solid #000;
+  height: 100%;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  order: 1;
+}
+@media (max-width: 500px) {
+  .days__mobile {
+    display: block;
+  }
+}
+.days__item {
+  grid-area: main;
+  padding: 20px;
+  border-bottom: 1px solid #000;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.days__item:hover {
+  background-color: #eee;
+}
+.days__details {
+  order: 3;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+@media (max-width: 500px) {
+  .days__details {
+    display: none;
+  }
+}
+.days__nav {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  display: block;
+}
+.days__nav__toggle {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #000;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.days.open .days__container {
+  display: block;
+  order: 2;
+}
+.days.open .days__nav__toggle:nth-of-type(1) {
+  width: 60%;
+}
+.days.open .days__nav__toggle:nth-of-type(2) {
+  width: 80%;
+}
+@media (max-width: 500px) {
+  .days.show .days__container {
+    display: none;
+  }
+  .days.show .days__details {
+    display: block;
+  }
+}
 @font-face {
   font-family: 'Butler';
   src: url("../fonts/Butler_Webfont/Butler-UltraLight.woff2") format('woff2'), url("../fonts/Butler_Webfont/Butler-UltraLight.woff") format('woff');
