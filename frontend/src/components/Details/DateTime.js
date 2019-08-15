@@ -35,8 +35,8 @@ const DateTime = ({ datetime }) => {
   return (
     <div className="days__datetime">
       <div>{formatTime(datetime)}</div>
-      <div>{datetime.getDate()}</div>
-      <div>{monthNames[datetime.getMonth()]}</div>
+      <span>{datetime.getDate()}</span>
+      <span> {monthNames[datetime.getMonth()]}</span>
       
     </div>
   )

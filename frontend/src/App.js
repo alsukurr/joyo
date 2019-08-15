@@ -3,7 +3,7 @@ import './css/style.css';
 import { openDB } from 'idb';
 
 import HomePage from './components/HomePage';
-import AddDay from './components/AddDay';
+import AddDay from './components/AddDay/AddDay';
 import Days from './components/Days';
 
 

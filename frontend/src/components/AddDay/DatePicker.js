@@ -32,7 +32,7 @@ const DatePicker = ({ datetime, setDatetime }) => {
   return (
     <div >
       <MuiPickersUtilsProvider utils={MomentUtils}>
-        <DateTimePicker value={datetime} onChange={setNewDatetime} />
+        <DateTimePicker value={datetime} onChange={setNewDatetime}  />
       </MuiPickersUtilsProvider>
     </div>
   )

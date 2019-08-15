@@ -161,7 +161,9 @@ input::-moz-focus-inner {
 .addDay {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
+  grid-template-rows: auto auto 70vh auto;
+  justify-items: start;
+  grid-gap: 40px;
 }
 .days {
   display: grid;
