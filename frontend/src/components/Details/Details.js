@@ -1,5 +1,6 @@
 import React from 'react';
 import DateTime from './DateTime';
+import xss from 'xss';
 
 const Details = ({ showDays, currentDay }) => {
   if (!currentDay) {
@@ -9,7 +10,7 @@ const Details = ({ showDays, currentDay }) => {
     <div className="days__details">
 			<div className="days__content">
         <h2>{currentDay.title}</h2>
-        <p>{currentDay.description}</p>
+        <div dangerouslySetInnerHTML={{ __html: xss(currentDay.description) }}></div>
       </div>
       <DateTime 
         datetime={currentDay.datetime}

@@ -66,6 +66,7 @@ const App = () => {
     <div className="app">
       { screen === 'home' && <HomePage setScreen = {setScreen} /> }
       { screen === 'addDay' && <AddDay storeDay={storeDay} setScreen={setScreen} />}
+      { screen === 'addDayFromHome' && <AddDay comingFromHome storeDay={storeDay} setScreen={setScreen} />}
       { screen === 'days' && <Days days={days} setScreen={setScreen} />}
     </div>
   );

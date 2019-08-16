@@ -4,7 +4,7 @@ import image from '../img/image.jpg';
 
 const HomePage = ({ setScreen }) => {
   const addDay = () => {
-    setScreen('addDay');
+    setScreen('addDayFromHome');
   }
 
   return (

@@ -165,6 +165,17 @@ input::-moz-focus-inner {
   justify-items: start;
   grid-gap: 40px;
 }
+.addDay__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  width: 100%;
+}
+.addDay__btns {
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+}
 .days {
   display: grid;
   grid-template-columns: 300px 1fr;
