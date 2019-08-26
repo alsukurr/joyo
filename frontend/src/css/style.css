@@ -247,6 +247,11 @@ input::-moz-focus-inner {
     display: none;
   }
 }
+.days__attr {
+  display: grid;
+  align-self: start;
+  grid-row-gap: 10px;
+}
 .days__nav {
   height: 40px;
   width: 40px;

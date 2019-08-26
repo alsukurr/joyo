@@ -5,14 +5,20 @@ import 'react-quill/dist/quill.snow.css';
 import xss from 'xss';
 
 
-const AddDay = ({ comingFromHome, storeDay, setScreen }) => {
+const AddDay = ({ comingFromHome, storeDay, setScreen, reloadDays }) => {
   const [title,  setTitle] = useState('');
   const [description,  setDescription] = useState('');
   const [datetime, setDatetime] = useState(new Date())
 
   const saveDayBtn = () => {
+    const sanitizeTitle = xss(title);
     const sanitizeDescription = xss(description);
-    storeDay({ title, sanitizeDescription, datetime });
+    storeDay({ 
+      title: sanitizeTitle, 
+      description: sanitizeDescription, 
+      datetime 
+    });
+    reloadDays();
     setScreen('days');
   }
 

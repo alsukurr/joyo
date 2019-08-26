@@ -30,11 +30,26 @@ const initDays = async () => {
   return days
 }
 
+const initKeys = async () => {
+  const db = await initDatabase();
+  const tx = await db.transaction('days', 'readonly');
+  const keys = tx.objectStore('days').getAllKeys();
+  await tx.done
+
+  return keys
+}
+
 const getDays = async () => {
-  const days = await initDays();
+  let days = await initDays();
+  let keys = await initKeys();
+   
+  days.forEach((day, index) => {
+    day.key = keys[index];
+  })
+
   // sort the dys by the dates
   // console.log(days);
-  days.sort((a,b) => {
+  days = days.sort((a,b) => {
     return new Date(b.datetime) - new Date(a.datetime)
   })
   return days 
@@ -49,25 +64,66 @@ const storeDay = async (day) => {
   await tx.done;
 };
 
+
+
 const App = () => {
   // set it back to home
   const [screen, setScreen] = useState('days'); 
   const [days, setDays] = useState([]); 
 
+  const reloadDays = async () => {
+    const days = await getDays();
+    setDays(days);
+  }
+
+  const deleteDay = async key => {
+    const db = await initDatabase();
+    const tx = await db.transaction('days', 'readwrite')
+    const store = await tx.objectStore('days');
+    console.log(key);
+    await store.delete(key)
+    await tx.done
+  
+    reloadDays();
+    setScreen('days');
+  }
+
   useEffect(() => {
     (async () => {
-      const days = await getDays();
-      setDays(days);
+      reloadDays();
     })();
   }); 
 
 
   return (
     <div className="app">
-      { screen === 'home' && <HomePage setScreen = {setScreen} /> }
-      { screen === 'addDay' && <AddDay storeDay={storeDay} setScreen={setScreen} />}
-      { screen === 'addDayFromHome' && <AddDay comingFromHome storeDay={storeDay} setScreen={setScreen} />}
-      { screen === 'days' && <Days days={days} setScreen={setScreen} />}
+      { screen === 'home' && 
+        <HomePage 
+          setScreen = {setScreen} /> 
+      }
+
+      { screen === 'addDay' && 
+        <AddDay 
+          storeDay={storeDay}
+          setScreen={setScreen}
+          reloadDays={reloadDays} />
+      }
+
+      { screen === 'addDayFromHome' && 
+        <AddDay 
+          comingFromHome 
+          storeDay= {storeDay}
+          setScreen={setScreen}
+          reloadDays={reloadDays} />
+      }
+
+      { screen === 'days' && 
+        <Days 
+          days={days}
+          setScreen={setScreen}
+          reloadDays={reloadDays} 
+          deleteDay={deleteDay} />
+      }
     </div>
   );
 }
