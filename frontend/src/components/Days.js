@@ -4,7 +4,7 @@ import Details from './Details/Details.js'
 import Nav from './Days/Nav.js'
 import List from './Days/List.js'
 
-const Days = ({ setScreen, days, deleteDay, reloadDays }) => {
+const Days = ({ setScreen, days, deleteDay, reloadDays, loggedIn }) => {
 
   const [showDays, setShowDays] = useState(false)
   const [currentDay, setCurrentDay] = useState(null)
@@ -20,7 +20,8 @@ const Days = ({ setScreen, days, deleteDay, reloadDays }) => {
         // ShowDetails={showDetails}
         // setShowDetails={setShowDetails}
         setCurrentDay={setCurrentDay}
-        setScreen={setScreen} />
+        setScreen={setScreen}
+        loggedIn={loggedIn} />
 
       <Nav
         showDays={showDays}

@@ -1,13 +1,13 @@
 import React from 'react';
 
-const List = ({ days, setCurrentDay, setScreen }) => {
+const List = ({ days, setCurrentDay, setScreen, loggedIn }) => {
   const monthNames = [
     'JAN', 'FEB', 'MAR',
     'APR', 'MAY', 'JUN',
     'JUL', 'AUG', 'SEP',
     'OCT', 'NOV', 'DEC']
 
-
+    // console.log(!loggedIn);
   return (
     <div className="days__container">
       <ul className="days__list">
@@ -31,7 +31,7 @@ const List = ({ days, setCurrentDay, setScreen }) => {
       <button 
         className="days__add-btn"
         onClick={() => {
-          setScreen('addDay');
+          (!loggedIn) ? setScreen('login') : setScreen('addDay');
         }}
       >
         +

@@ -373,3 +373,10 @@ body {
   cursor: pointer;
   background-color: #fff;
 }
+.login__form {
+  display: grid;
+  max-width: 500px;
+}
+.login__btn {
+  place-self: start;
+}

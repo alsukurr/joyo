@@ -5,6 +5,7 @@ import { openDB } from 'idb';
 import HomePage from './components/HomePage';
 import AddDay from './components/AddDay/AddDay';
 import Days from './components/Days';
+import Login from './components/Login';
 
 
 const initDatabase  = async () => {
@@ -68,8 +69,9 @@ const storeDay = async (day) => {
 
 const App = () => {
   // set it back to home
-  const [screen, setScreen] = useState('days'); 
-  const [days, setDays] = useState([]); 
+  const [screen, setScreen] = useState('login'); 
+  const [days, setDays] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false); 
 
   const reloadDays = async () => {
     const days = await getDays();
@@ -122,8 +124,14 @@ const App = () => {
           days={days}
           setScreen={setScreen}
           reloadDays={reloadDays} 
-          deleteDay={deleteDay} />
+          deleteDay={deleteDay}
+          loggedIn={loggedIn} />
       }
+
+      { screen === 'login' && 
+        <Login />
+      }
+
     </div>
   );
 }
