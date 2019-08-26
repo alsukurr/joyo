@@ -203,6 +203,9 @@ input::-moz-focus-inner {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .days__add-btn {
   padding: 20px;
@@ -251,6 +254,9 @@ input::-moz-focus-inner {
   display: grid;
   align-self: start;
   grid-row-gap: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .days__nav {
   height: 40px;

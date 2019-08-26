@@ -30,6 +30,7 @@ const Days = ({ setScreen, days, deleteDay, reloadDays }) => {
       <Details
         showDays={showDays}
         currentDay={currentDay}
+        setCurrentDay={setCurrentDay}
         deleteDay={deleteDay}
         reloadDays={reloadDays} 
         setScreen={setScreen}  />
