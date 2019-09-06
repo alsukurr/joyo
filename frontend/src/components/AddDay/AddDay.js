@@ -3,7 +3,7 @@ import DatePicker from './DatePicker';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import xss from 'xss';
-
+import { navigate } from '@reach/router';
 
 const AddDay = ({ comingFromHome, storeDay, setScreen, reloadDays }) => {
   const [title,  setTitle] = useState('');
@@ -19,11 +19,11 @@ const AddDay = ({ comingFromHome, storeDay, setScreen, reloadDays }) => {
       datetime 
     });
     reloadDays();
-    setScreen('days');
+    navigate('/entries');
   }
 
   const backBtn = () => {
-    setScreen('days');
+    navigate('/entries');
   }
 
   return (

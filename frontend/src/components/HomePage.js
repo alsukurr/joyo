@@ -1,10 +1,12 @@
 import React from 'react';
+import { navigate } from '@reach/router'
+
 
 import image from '../img/image.jpg';
 
-const HomePage = ({ setScreen }) => {
+const HomePage = ({ }) => {
   const addDay = () => {
-    setScreen('addDayFromHome');
+    navigate('/first-entry')
   }
 
   return (

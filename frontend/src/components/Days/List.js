@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from '@reach/router';
 
 const List = ({ days, setCurrentDay, setScreen, loggedIn }) => {
   const monthNames = [
@@ -18,6 +19,8 @@ const List = ({ days, setCurrentDay, setScreen, loggedIn }) => {
             onClick={() => {
               // setShowDetails(!showDetails);
               setCurrentDay(day);
+              navigate('/entries/' + day.key);
+
               // setShowDetails(false);
             }}>
             <span>{day.title}</span>
@@ -31,7 +34,7 @@ const List = ({ days, setCurrentDay, setScreen, loggedIn }) => {
       <button 
         className="days__add-btn"
         onClick={() => {
-          (!loggedIn) ? setScreen('login') : setScreen('addDay');
+          (!loggedIn) ? navigate('/login') : navigate('/first-entry');
         }}
       >
         +

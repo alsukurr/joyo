@@ -1,10 +1,16 @@
 import React, { Fragment } from 'react';
 import DateTime from './DateTime';
-import EmptyScreen from './EmptyScreen';
 import xss from 'xss';
+import { navigate } from '@reach/router'
+import EmptyScreen from '../Days/EmptyScreen';
 
-const Details = ({ showDays, currentDay, setCurrentDay, reloadDays, setScreen, deleteDay }) => {
+const Details = ({ showDays, currentDay, setCurrentDay, reloadDays, setScreen, deleteDay, entryId, days }) => {
   if (!currentDay) {
+    const day = days.filter(item => {
+      if (item.key === parseInt(entryId)) return true
+      return false
+    })[0]
+    setCurrentDay(day)
     return <EmptyScreen />
   }
 
@@ -15,7 +21,7 @@ const Details = ({ showDays, currentDay, setCurrentDay, reloadDays, setScreen, d
     
     deleteDay(currentDay.key);
     reloadDays();
-    setScreen('days');
+    navigate('/entries');
     setCurrentDay(null);
   }
 

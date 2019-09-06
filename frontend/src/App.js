@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './css/style.css';
 import { openDB } from 'idb';
+import { Router } from '@reach/router';
+
 
 import HomePage from './components/HomePage';
 import AddDay from './components/AddDay/AddDay';
@@ -69,7 +71,7 @@ const storeDay = async (day) => {
 
 const App = () => {
   // set it back to home
-  const [screen, setScreen] = useState('login'); 
+  const [screen, setScreen] = useState('days'); 
   const [days, setDays] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false); 
 
@@ -99,38 +101,33 @@ const App = () => {
 
   return (
     <div className="app">
-      { screen === 'home' && 
+      <Router>
+        
         <HomePage 
-          setScreen = {setScreen} /> 
-      }
+          path="/" /> 
 
-      { screen === 'addDay' && 
         <AddDay 
           storeDay={storeDay}
-          setScreen={setScreen}
+          path="new-entry"
           reloadDays={reloadDays} />
-      }
 
-      { screen === 'addDayFromHome' && 
         <AddDay 
           comingFromHome 
           storeDay= {storeDay}
-          setScreen={setScreen}
+          path="first-entry"
           reloadDays={reloadDays} />
-      }
 
-      { screen === 'days' && 
         <Days 
           days={days}
-          setScreen={setScreen}
+          path="entries/*"
           reloadDays={reloadDays} 
           deleteDay={deleteDay}
           loggedIn={loggedIn} />
-      }
 
-      { screen === 'login' && 
-        <Login />
-      }
+        <Login 
+          path="login" />
+
+      </Router>
 
     </div>
   );

@@ -3,6 +3,10 @@ import React, { useState} from 'react'
 import Details from './Details/Details.js'
 import Nav from './Days/Nav.js'
 import List from './Days/List.js'
+import EmptyScreen from './Days/EmptyScreen';
+
+import { Router } from '@reach/router'
+
 
 const Days = ({ setScreen, days, deleteDay, reloadDays, loggedIn }) => {
 
@@ -28,13 +32,18 @@ const Days = ({ setScreen, days, deleteDay, reloadDays, loggedIn }) => {
         // setShowDetails={setShowDetails}
         setShowDays={setShowDays} />
 
-      <Details
-        showDays={showDays}
-        currentDay={currentDay}
-        setCurrentDay={setCurrentDay}
-        deleteDay={deleteDay}
-        reloadDays={reloadDays} 
-        setScreen={setScreen}  />
+      <Router>
+        <Details
+          showDays={showDays}
+          currentDay={currentDay}
+          setCurrentDay={setCurrentDay}
+          deleteDay={deleteDay}
+          reloadDays={reloadDays}
+          days={days} 
+          path="/:entryId"  />
+
+        <EmptyScreen path="/" />
+      </Router>
 
     </div>
   )
